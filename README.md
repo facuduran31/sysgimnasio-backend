@@ -1,1 +1,1 @@
-App web para rutinas
+App web para rutinas del gimnasio
