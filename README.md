@@ -1,1 +1,3 @@
-App web para rutinas
+### Backend
+
+Sistema de gestión de rutinas para gimnasio
