@@ -13,13 +13,19 @@ const routerEjercicios = require('./routers/ejercicios');
 const routerDescripcionEjercicio = require('./routers/descripcionEjercicio');
 const routerCuotas = require('./routers/cuotas');
 const routerRutinaEjercicio = require('./routers/rutina-ejercicio');
+const { routerLogin, verificarToken } = require('./routers/login');
+
 
 // MIDDLEWARES
 app.use(cors());
 app.use(express.json());
 app.use(bodyparser.json());
+app.use(verificarToken);
 
 // Main
+
+app.use('/api/login', routerLogin);
+
 app.use('/api/rutina-ejercicio', routerRutinaEjercicio)
 
 app.use('/api/cuotas', routerCuotas);
@@ -41,3 +47,4 @@ app.listen(PORT, () => {
 app.get('/api', (req, res) => {
     res.end('El servidor funciona');
 });
+
