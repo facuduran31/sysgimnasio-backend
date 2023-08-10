@@ -11,6 +11,8 @@ const routerUsuarios = require('./routers/usuarios');
 const routerRutinas = require('./routers/rutinas');
 const routerEjercicios = require('./routers/ejercicios');
 const routerDescripcionEjercicio = require('./routers/descripcionEjercicio');
+const routerCuotas = require('./routers/cuotas');
+const routerRutinaEjercicio = require('./routers/rutina-ejercicio');
 
 // MIDDLEWARES
 app.use(cors());
@@ -18,6 +20,9 @@ app.use(express.json());
 app.use(bodyparser.json());
 
 // Main
+app.use('/api/rutina-ejercicio', routerRutinaEjercicio)
+
+app.use('/api/cuotas', routerCuotas);
 
 app.use('/api/descripcionEjercicio', routerDescripcionEjercicio);
 
