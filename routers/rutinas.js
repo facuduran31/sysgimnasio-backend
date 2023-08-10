@@ -34,7 +34,7 @@ routerRutinas.post('/', (req, res) => {
 routerRutinas.put('/', (req, res) => {
     const rutina = req.body;
 
-    connection.query('UPDATE rutinas SET idRutina = ?, nombreRutina = ?, cantidadDias = ? WHERE idRutina = ?', [rutina.idRutina, rutina.nombreRutina, rutina.cantidadDias], (err, results) => {
+    connection.query('UPDATE rutinas SET idRutina = ?, nombreRutina = ?, cantidadDias = ? WHERE idRutina = ?', [rutina.idRutina, rutina.nombreRutina, rutina.cantidadDias, rutina.idRutina], (err, results) => {
         if(err) throw res.send(err);
         res.json({"mensaje": "Se modificó con éxito la rutina"});
     });
