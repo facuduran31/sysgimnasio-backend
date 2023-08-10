@@ -11,13 +11,13 @@ Content-Type: application/json
 
 ###
 
-PUT http://localhost:8080/api/planes/3 HTTP/1.1
+PUT http://localhost:8080/api/planes HTTP/1.1
 Content-Type: application/json
 
 {
     "idPlan": 3,
     "nombrePlan": "Zumba",
-    "precio": 1600
+    "precio": 1700
 }
 
 ###
@@ -81,7 +81,7 @@ Content-Type: application/json
 
 ###
 
-PUT http://localhost:8080/api/usuarios/1 HTTP/1.1
+PUT http://localhost:8080/api/usuarios HTTP/1.1
 Content-Type: application/json
 
 {

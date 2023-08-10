@@ -31,11 +31,10 @@ routerUsuarios.post('/', (req, res) => {
     });
 });
 
-routerUsuarios.put('/:id', (req, res) => {
-    const id = req.params.id;
+routerUsuarios.put('/', (req, res) => {
     const user = req.body;
 
-    connection.query('UPDATE usuarios SET idUsuario = ?, numeroDocumento = ?, nombreApellido = ?, fechaNacimiento = ?, numeroTelefono = ?, email = ?, idPlan = ?, idRutina = ?, password = ? WHERE idUsuario = ?', [user.idUsuario, user.numeroDocumento, user.nombreApellido, user.fechaNacimiento, user.numeroTelefono, user.email, user.idPlan, user.idRutina, user.password], (err, results) => {
+    connection.query('UPDATE usuarios SET idUsuario = ?, numeroDocumento = ?, nombreApellido = ?, fechaNacimiento = ?, numeroTelefono = ?, email = ?, idPlan = ?, idRutina = ?, password = ? WHERE idUsuario = ?', [user.idUsuario, user.numeroDocumento, user.nombreApellido, user.fechaNacimiento, user.numeroTelefono, user.email, user.idPlan, user.idRutina, user.password, user.idUsuario], (err, results) => {
         if(err) throw res.send(err);
         res.json({"mensaje": "Se modificó con éxito el usuario"});
     });
