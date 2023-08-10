@@ -4,9 +4,9 @@ POST http://localhost:8080/api/planes HTTP/1.1
 Content-Type: application/json
 
 {
-    "idPlan": 4,
-    "nombrePlan": "Funcional",
-    "precio": 1900
+    "idPlan": 1,
+    "nombrePlan": "Musculacion",
+    "precio": 4200
 }
 
 ###
@@ -75,7 +75,7 @@ Content-Type: application/json
     "numeroTelefono": "3412284020",
     "email": "juancruzduran1@gmail.com",
     "idPlan": 1,
-    "idRutina": 2,
+    "idRutina": 1,
     "password": "1234"
 }
 
@@ -91,7 +91,7 @@ Content-Type: application/json
     "fechaNacimiento": "2000-05-18",
     "numeroTelefono": "3412284020",
     "email": "juancruzduran1@gmail.com",
-    "idPlan": 2,
+    "idPlan": 1,
     "idRutina": 2,
     "password": "1234"
 }
