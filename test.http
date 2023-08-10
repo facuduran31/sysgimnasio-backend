@@ -49,7 +49,7 @@ Content-Type: application/json
 {
     "idRutina": 1,
     "nombreRutina": "Adaptacion",
-    "cantidadDias": 5
+    "cantidadDias": 6
 }
 
 ###
