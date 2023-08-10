@@ -139,3 +139,40 @@ Content-Type: application/json
 
 DELETE http://localhost:8080/api/ejercicios/1 HTTP/1.1
 Content-Type: application/json
+
+
+############################################################################ DESCRIPCION DE EJERCICIO
+
+POST http://localhost:8080/api/descripcionEjercicio HTTP/1.1
+Content-Type: application/json
+
+{
+    "idDescripcionEjercicio": 1,
+    "idEjercicio": 1,
+    "cantidadSeries": 3,
+    "cantidadRepeticiones": 8,
+    "tiempoDescanso": "60 seg"
+}
+
+###
+
+PUT http://localhost:8080/api/descripcionEjercicio HTTP/1.1
+Content-Type: application/json
+
+{
+    "idDescripcionEjercicio": 1,
+    "idEjercicio": 1,
+    "cantidadSeries": 4,
+    "cantidadRepeticiones": 15,
+    "tiempoDescanso": "60 seg"
+}
+
+###
+
+GET http://localhost:8080/api/descripcionEjercicio HTTP/1.1
+Content-Type: application/json
+
+###
+
+DELETE http://localhost:8080/api/descripcionEjercicio/1 HTTP/1.1
+Content-Type: application/json
