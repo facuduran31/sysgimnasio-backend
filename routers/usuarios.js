@@ -41,7 +41,7 @@ routerUsuarios.put('/', (req, res) => {
 });
 
 routerUsuarios.delete('/:id', (req, res) => {
-    const id = req.params.id;z
+    const id = req.params.id;
     
     connection.query('DELETE FROM usuarios WHERE idUsuario = ?', [id], (err, results) => {
         if(err) throw res.send(err);
