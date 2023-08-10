@@ -1,10 +1,23 @@
-PUT http://localhost:8080/api/planes/3 HTTP/1.1
+############################################################################ PLANES
+
+POST http://localhost:8080/api/planes HTTP/1.1
+Content-Type: application/json
+
+{
+    "idPlan": 4,
+    "nombrePlan": "Funcional",
+    "precio": 1900
+}
+
+###
+
+PUT http://localhost:8080/api/planes HTTP/1.1
 Content-Type: application/json
 
 {
     "idPlan": 3,
     "nombrePlan": "Zumba",
-    "precio": 1600
+    "precio": 1700
 }
 
 ###
@@ -14,5 +27,83 @@ Content-Type: application/json
 
 ###
 
-DELETE http://localhost:8080/api/planes/3 HTTP/1.1
+DELETE http://localhost:8080/api/planes/4 HTTP/1.1
 Content-Type: application/json
+
+############################################################################ RUTINAS
+
+POST http://localhost:8080/api/rutinas HTTP/1.1
+Content-Type: application/json
+
+{
+    "idRutina": 2,
+    "nombreRutina": "Fuerza",
+    "cantidadDias": 5
+}
+
+###
+
+PUT http://localhost:8080/api/rutinas HTTP/1.1
+Content-Type: application/json
+
+{
+    "idRutina": 1,
+    "nombreRutina": "Adaptacion",
+    "cantidadDias": 6
+}
+
+###
+
+GET http://localhost:8080/api/rutinas HTTP/1.1
+Content-Type: application/json
+
+###
+
+DELETE http://localhost:8080/api/rutinas/1 HTTP/1.1
+Content-Type: application/json
+
+############################################################################ USUARIOS
+
+POST http://localhost:8080/api/usuarios HTTP/1.1
+Content-Type: application/json
+
+{
+    "idUsuario": 1,
+    "numeroDocumento": "42481227",
+    "nombreApellido": "Juan Cruz Duran",
+    "fechaNacimiento": "2000-05-18",
+    "numeroTelefono": "3412284020",
+    "email": "juancruzduran1@gmail.com",
+    "idPlan": 1,
+    "idRutina": 2,
+    "password": "1234"
+}
+
+###
+
+PUT http://localhost:8080/api/usuarios HTTP/1.1
+Content-Type: application/json
+
+{
+    "idUsuario": 1,
+    "numeroDocumento": "42481227",
+    "nombreApellido": "Juan Cruz Duran",
+    "fechaNacimiento": "2000-05-18",
+    "numeroTelefono": "3412284020",
+    "email": "juancruzduran1@gmail.com",
+    "idPlan": 2,
+    "idRutina": 2,
+    "password": "1234"
+}
+
+###
+
+GET http://localhost:8080/api/usuarios HTTP/1.1
+Content-Type: application/json
+
+###
+
+DELETE http://localhost:8080/api/usuarios/1 HTTP/1.1
+Content-Type: application/json
+
+

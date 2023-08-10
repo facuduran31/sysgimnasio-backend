@@ -31,8 +31,7 @@ routerPlanes.post('/', (req, res) => {
     });
 });
 
-routerPlanes.put('/:id', (req, res) => {
-    const id = req.params.id;
+routerPlanes.put('/', (req, res) => {
     const plan = req.body;
 
     connection.query('UPDATE planes SET idPlan = ?, nombrePlan = ?, precio = ? WHERE idPlan = ?', [plan.idPlan, plan.nombrePlan, plan.precio, plan.idPlan], (err, results) => {
