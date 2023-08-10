@@ -34,7 +34,7 @@ routerCuotas.post('/', (req, res) => {
 routerCuotas.put('/', (req, res) => {
     const cuota = req.body;
 
-    connection.query('UPDATE cuotas SET idCuota = ?, fechaPago = ?, monto = ?, idUsuario = ? WHERE idUsuario = ?', [cuota.idCuota, cuota.fechaPago, cuota.monto, cuota.idUsuario, cuota.idUsuario], (err, results) => {
+    connection.query('UPDATE cuotas SET idCuota = ?, fechaPago = ?, monto = ?, idUsuario = ? WHERE idCuota = ?', [cuota.idCuota, cuota.fechaPago, cuota.monto, cuota.idUsuario, cuota.idCuota], (err, results) => {
         if(err) throw res.send(err);
         res.json({"mensaje": "Se modificó con éxito la cuota"});
     });
@@ -43,7 +43,7 @@ routerCuotas.put('/', (req, res) => {
 routerCuotas.delete('/:id', (req, res) => {
     const id = req.params.id;
     
-    connection.query('DELETE FROM cuotas WHERE idUsuario = ?', [id], (err, results) => {
+    connection.query('DELETE FROM cuotas WHERE idCuota = ?', [id], (err, results) => {
         if(err) throw res.send(err);
         res.json({"mensaje:": "cuota borrada..."});
     });

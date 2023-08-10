@@ -11,10 +11,11 @@ routerRutinaEjercicio.get('/', (req, res) => {
     });
 });
 
-routerRutinaEjercicio.get('/:id/:id', (req, res) => {
-    const id = req.params.id;
+routerRutinaEjercicio.get('/:idR/:idE', (req, res) => {
+    const idR = req.params.idR;
+    const idE = req.params.idE;
 
-    connection.query('SELECT * FROM rutina_ejercicio WHERE idRutina = ? AND idEjercicio = ?', [id, id], (err, results) => 
+    connection.query('SELECT * FROM rutina_ejercicio WHERE idRutina = ? AND idEjercicio = ?', [idE, idR], (err, results) => 
     {
         if(err) throw res.send(err);
         res.json(results);
@@ -40,10 +41,11 @@ routerRutinaEjercicio.put('/', (req, res) => {
     });
 });
 
-routerRutinaEjercicio.delete('/:id/:id', (req, res) => {
-    const id = req.params.id;
+routerRutinaEjercicio.delete('/:idR/:idE', (req, res) => {
+    const idR = req.params.idR;
+    const idE = req.params.idE;
     
-    connection.query('DELETE FROM rutina_ejercicio WHERE idRutinas = ? idEjercicio = ?', [id, id], (err, results) => {
+    connection.query('DELETE FROM rutina_ejercicio WHERE idRutinas = ? idEjercicio = ?', [idR, idE], (err, results) => {
         if(err) throw res.send(err);
         res.json({"mensaje:": "deleteado"});
     });

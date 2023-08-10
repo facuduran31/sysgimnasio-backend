@@ -20,25 +20,24 @@ const { routerLogin, verificarToken } = require('./routers/login');
 app.use(cors());
 app.use(express.json());
 app.use(bodyparser.json());
-app.use(verificarToken);
 
 // Main
 
 app.use('/api/login', routerLogin);
 
-app.use('/api/rutina-ejercicio', routerRutinaEjercicio)
+app.use('/api/rutina-ejercicio', verificarToken, routerRutinaEjercicio)
 
-app.use('/api/cuotas', routerCuotas);
+app.use('/api/cuotas', verificarToken, routerCuotas);
 
-app.use('/api/descripcionEjercicio', routerDescripcionEjercicio);
+app.use('/api/descripcionEjercicio', verificarToken, routerDescripcionEjercicio);
 
-app.use('/api/ejercicios', routerEjercicios);
+app.use('/api/ejercicios', verificarToken, routerEjercicios);
 
-app.use('/api/rutinas', routerRutinas);
+app.use('/api/rutinas', verificarToken, routerRutinas);
 
-app.use('/api/usuarios', routerUsuarios);
+app.use('/api/usuarios', verificarToken, routerUsuarios);
 
-app.use('/api/planes', routerPlanes);
+app.use('/api/planes', verificarToken, routerPlanes);
 
 app.listen(PORT, () => {
     console.log(`Server running on port ${PORT}`);

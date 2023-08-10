@@ -18,11 +18,12 @@ routerLogin.post('/', (req, res) => {
       return res.status(401).json({ error: 'No se encontró ningún usuario con esas credenciales.' });
     }
 
-    let usuarioAutenticado = results[0];
+    const usuarioAutenticado = JSON.parse(JSON.stringify(results[0]));
 
     // Generar y enviar token
     jwt.sign(usuarioAutenticado, SECRET_KEY, { expiresIn: '1h' }, (err, token) => {
       if (err) {
+        console.log(usuarioAutenticado);
         console.error('Error al generar el token:', err);
         return res.status(500).json({ error: 'Error al generar el token.' });
       }
