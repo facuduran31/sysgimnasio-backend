@@ -8,7 +8,8 @@ const PORT = 8080;
 // ROUTERS
 const routerPlanes = require('./routers/planes');
 const routerUsuarios = require('./routers/usuarios');
-const routerRutinas = require('./routers/rutinas')
+const routerRutinas = require('./routers/rutinas');
+const routerEjercicios = require('./routers/ejercicios');
 
 // MIDDLEWARES
 app.use(cors());
@@ -16,6 +17,8 @@ app.use(express.json());
 app.use(bodyparser.json());
 
 // Main
+
+app.use('/api/ejercicios', routerEjercicios);
 
 app.use('/api/rutinas', routerRutinas);
 
