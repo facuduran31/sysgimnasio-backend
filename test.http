@@ -4,20 +4,20 @@ POST http://localhost:8080/api/planes HTTP/1.1
 Content-Type: application/json
 
 {
-    "idPlan": 4,
-    "nombrePlan": "Funcional",
-    "precio": 1900
+    "idPlan": 1,
+    "nombrePlan": "Musculacion",
+    "precio": 4200
 }
 
 ###
 
-PUT http://localhost:8080/api/planes/3 HTTP/1.1
+PUT http://localhost:8080/api/planes HTTP/1.1
 Content-Type: application/json
 
 {
     "idPlan": 3,
     "nombrePlan": "Zumba",
-    "precio": 1600
+    "precio": 1700
 }
 
 ###
@@ -49,7 +49,7 @@ Content-Type: application/json
 {
     "idRutina": 1,
     "nombreRutina": "Adaptacion",
-    "cantidadDias": 5
+    "cantidadDias": 6
 }
 
 ###
@@ -75,13 +75,13 @@ Content-Type: application/json
     "numeroTelefono": "3412284020",
     "email": "juancruzduran1@gmail.com",
     "idPlan": 1,
-    "idRutina": 2,
+    "idRutina": 1,
     "password": "1234"
 }
 
 ###
 
-PUT http://localhost:8080/api/usuarios/1 HTTP/1.1
+PUT http://localhost:8080/api/usuarios HTTP/1.1
 Content-Type: application/json
 
 {
@@ -91,7 +91,7 @@ Content-Type: application/json
     "fechaNacimiento": "2000-05-18",
     "numeroTelefono": "3412284020",
     "email": "juancruzduran1@gmail.com",
-    "idPlan": 2,
+    "idPlan": 1,
     "idRutina": 2,
     "password": "1234"
 }
@@ -106,4 +106,151 @@ Content-Type: application/json
 DELETE http://localhost:8080/api/usuarios/1 HTTP/1.1
 Content-Type: application/json
 
+############################################################################ EJERCICIOS
 
+POST http://localhost:8080/api/ejercicios HTTP/1.1
+Content-Type: application/json
+
+{
+    "idEjercicio": 1,
+    "nombreEjercicio": "Press banca",
+    "urlVideo": "https://www.youtube.com/watch?v=gXGYLpHNRss",
+    "urlImagen": "foto.jpg"
+}
+
+###
+
+PUT http://localhost:8080/api/ejercicios HTTP/1.1
+Content-Type: application/json
+
+{
+    "idEjercicio": 1,
+    "nombreEjercicio": "Press banca",
+    "urlVideo": "https://www.youtube.com/watch?v=gXGYLpHNRss",
+    "urlImagen": "foto2.jpg"
+}
+
+###
+
+GET http://localhost:8080/api/ejercicios HTTP/1.1
+Content-Type: application/json
+
+###
+
+DELETE http://localhost:8080/api/ejercicios/1 HTTP/1.1
+Content-Type: application/json
+
+
+############################################################################ DESCRIPCION DE EJERCICIO
+
+POST http://localhost:8080/api/descripcionEjercicio HTTP/1.1
+Content-Type: application/json
+
+{
+    "idDescripcionEjercicio": 1,
+    "idEjercicio": 1,
+    "cantidadSeries": 3,
+    "cantidadRepeticiones": 8,
+    "tiempoDescanso": "60 seg"
+}
+
+###
+
+PUT http://localhost:8080/api/descripcionEjercicio HTTP/1.1
+Content-Type: application/json
+
+{
+    "idDescripcionEjercicio": 1,
+    "idEjercicio": 1,
+    "cantidadSeries": 4,
+    "cantidadRepeticiones": 15,
+    "tiempoDescanso": "60 seg"
+}
+
+###
+
+GET http://localhost:8080/api/descripcionEjercicio HTTP/1.1
+Content-Type: application/json
+
+###
+
+DELETE http://localhost:8080/api/descripcionEjercicio/1 HTTP/1.1
+Content-Type: application/json
+
+############################################################################ CUOTAS
+
+POST http://localhost:8080/api/cuotas HTTP/1.1
+Content-Type: application/json
+
+{
+    "idCuota": 1,
+    "fechaPago": "2023-08-10",
+    "monto": 4200,
+    "idUsuario": 1
+}
+
+###
+
+PUT http://localhost:8080/api/cuotas HTTP/1.1
+Content-Type: application/json
+
+{
+    "idCuota": 1,
+    "fechaPago": "2023-08-08",
+    "monto": 4200,
+    "idUsuario": 1
+}
+
+###
+
+GET http://localhost:8080/api/cuotas HTTP/1.1
+Content-Type: application/json
+
+###
+
+DELETE http://localhost:8080/api/cuotas/1 HTTP/1.1
+Content-Type: application/json
+
+############################################################################ RUTINA-EJERCICIO
+
+POST http://localhost:8080/api/rutina-ejercicio HTTP/1.1
+Content-Type: application/json
+Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZFVzdWFyaW8iOjEsIm51bWVyb0RvY3VtZW50byI6IjQyNDgxMjI3Iiwibm9tYnJlQXBlbGxpZG8iOiJKdWFuIENydXogRHVyYW4iLCJmZWNoYU5hY2ltaWVudG8iOiIyMDAwLTA1LTE4VDAzOjAwOjAwLjAwMFoiLCJudW1lcm9UZWxlZm9ubyI6IjM0MTIyODQwMjAiLCJlbWFpbCI6Imp1YW5jcnV6ZHVyYW4xQGdtYWlsLmNvbSIsImlkUGxhbiI6MSwiaWRSdXRpbmEiOjEsInBhc3N3b3JkIjoiMTIzNCIsImlhdCI6MTY5MTY5NTU3MSwiZXhwIjoxNjkxNjk5MTcxfQ.H9DycCfSgKRwcWskrw993p9lxzaBqhxTH9D9rDbw-2s
+
+{
+    "idRutina": 1,
+    "idEjercicio": 1
+}
+
+###
+
+PUT http://localhost:8080/api/rutina-ejercicio HTTP/1.1
+Content-Type: application/json
+Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZFVzdWFyaW8iOjEsIm51bWVyb0RvY3VtZW50byI6IjQyNDgxMjI3Iiwibm9tYnJlQXBlbGxpZG8iOiJKdWFuIENydXogRHVyYW4iLCJmZWNoYU5hY2ltaWVudG8iOiIyMDAwLTA1LTE4VDAzOjAwOjAwLjAwMFoiLCJudW1lcm9UZWxlZm9ubyI6IjM0MTIyODQwMjAiLCJlbWFpbCI6Imp1YW5jcnV6ZHVyYW4xQGdtYWlsLmNvbSIsImlkUGxhbiI6MSwiaWRSdXRpbmEiOjEsInBhc3N3b3JkIjoiMTIzNCIsImlhdCI6MTY5MTY5NTU3MSwiZXhwIjoxNjkxNjk5MTcxfQ.H9DycCfSgKRwcWskrw993p9lxzaBqhxTH9D9rDbw-2s
+
+{
+    "idRutina": 2,
+    "idEjercicio": 1
+}
+
+###
+
+GET http://localhost:8080/api/rutina-ejercicio HTTP/1.1
+Content-Type: application/json
+Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZFVzdWFyaW8iOjEsIm51bWVyb0RvY3VtZW50byI6IjQyNDgxMjI3Iiwibm9tYnJlQXBlbGxpZG8iOiJKdWFuIENydXogRHVyYW4iLCJmZWNoYU5hY2ltaWVudG8iOiIyMDAwLTA1LTE4VDAzOjAwOjAwLjAwMFoiLCJudW1lcm9UZWxlZm9ubyI6IjM0MTIyODQwMjAiLCJlbWFpbCI6Imp1YW5jcnV6ZHVyYW4xQGdtYWlsLmNvbSIsImlkUGxhbiI6MSwiaWRSdXRpbmEiOjEsInBhc3N3b3JkIjoiMTIzNCIsImlhdCI6MTY5MTY5NTU3MSwiZXhwIjoxNjkxNjk5MTcxfQ.H9DycCfSgKRwcWskrw993p9lxzaBqhxTH9D9rDbw-2s
+
+###
+
+DELETE http://localhost:8080/api/rutina-ejercicio/1/1 HTTP/1.1
+Content-Type: application/json
+Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZFVzdWFyaW8iOjEsIm51bWVyb0RvY3VtZW50byI6IjQyNDgxMjI3Iiwibm9tYnJlQXBlbGxpZG8iOiJKdWFuIENydXogRHVyYW4iLCJmZWNoYU5hY2ltaWVudG8iOiIyMDAwLTA1LTE4VDAzOjAwOjAwLjAwMFoiLCJudW1lcm9UZWxlZm9ubyI6IjM0MTIyODQwMjAiLCJlbWFpbCI6Imp1YW5jcnV6ZHVyYW4xQGdtYWlsLmNvbSIsImlkUGxhbiI6MSwiaWRSdXRpbmEiOjEsInBhc3N3b3JkIjoiMTIzNCIsImlhdCI6MTY5MTY5NTU3MSwiZXhwIjoxNjkxNjk5MTcxfQ.H9DycCfSgKRwcWskrw993p9lxzaBqhxTH9D9rDbw-2s
+
+############################################################################ LOGIN
+
+POST http://localhost:8080/api/login HTTP/1.1
+Content-Type: application/json
+
+{
+    "email": "juancruzduran1@gmail.com",
+    "password": "1234"
+}
