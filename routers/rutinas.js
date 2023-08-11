@@ -43,7 +43,7 @@ routerRutinas.put('/', (req, res) => {
 routerRutinas.delete('/:id', (req, res) => {
     const id = req.params.id;
     
-    connection.query('DELETE FROM rutinas WHERE idRutinas = ?', [id], (err, results) => {
+    connection.query('DELETE FROM rutinas WHERE idRutina = ?', [id], (err, results) => {
         if(err) throw res.send(err);
         res.json({"mensaje:": "chau tu rutina pa..."});
     });
