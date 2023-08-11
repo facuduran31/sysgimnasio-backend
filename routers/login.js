@@ -5,10 +5,10 @@ const SECRET_KEY = "claveSecreta";
 const routerLogin = express.Router();
 
 routerLogin.post('/', (req, res) => {
-  const { numDoc, password } = req.body;
+  const { email, password } = req.body;
 
   // Verificar credenciales
-  connection.query('SELECT * FROM usuarios WHERE numeroDocumento = ? AND password = ?', [numDoc, password], (err, results) => {
+  connection.query('SELECT * FROM usuarios WHERE email = ? AND password = ?', [email, password], (err, results) => {
     if (err) {
       console.error('Error al consultar la base de datos:', err);
       return res.status(500).json({ error: 'Error al verificar las credenciales.' });
