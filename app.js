@@ -2,6 +2,8 @@
 const express = require('express');
 const cors = require('cors');
 const bodyparser = require('body-parser');
+const jwt = require('jsonwebtoken');
+const SECRET_KEY = "claveSecreta";
 const app = express();
 const PORT = 8080;
 
