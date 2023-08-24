@@ -64,4 +64,3 @@ app.listen(PORT, () => {
 app.get('/api', (req, res) => {
     res.end('El servidor funciona');
 });
-
